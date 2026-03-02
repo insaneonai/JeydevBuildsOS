@@ -3,6 +3,7 @@ typedef unsigned int uint32_t;
 typedef uint32_t size_t;
 
 #include "kernel.h"
+#include "common.h"
 
 extern char __bss[], __bss_end[], __stack_top[];
 
@@ -37,9 +38,7 @@ void kernel_main(void){
     setmem(__bss, 0, (size_t) __bss_end - (size_t) __bss);
     
     const char *s = "\n\nHello World!\n";
-    for (int i = 0; s[i] != '\0'; i++) {
-        putchar(s[i]);
-    }
+	printf("This is jeydev %s", s);
 
     for (;;) {
     }
